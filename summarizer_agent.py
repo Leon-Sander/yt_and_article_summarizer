@@ -20,7 +20,7 @@ import os
 
 load_dotenv()
 
-text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n", "\n"], chunk_size=3950, chunk_overlap=100)
+text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n", "\n", " "], chunk_size=3950, chunk_overlap=100)
 
 def create_stuff_summary(docs):
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
