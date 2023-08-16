@@ -4,3 +4,5 @@ python-dotenv
 openai
 st-chat-message
 pandas
+youtube-transcript-api
+beautifulsoup4

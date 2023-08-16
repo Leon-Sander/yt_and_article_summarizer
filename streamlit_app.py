@@ -3,13 +3,13 @@ from st_chat_message import message
 import pandas as pd
 import utils
 from datetime import datetime
-from langchain.callbacks import get_openai_callback
+from summarizer_agent import summary_agent
 
 st.title("Simple Langchain Chatapp :bird:")
 tab1, tab2 = st.tabs(["Chat", "Usage Chart"])
 
 if "llm_chain" not in st.session_state:
-    st.session_state.llm_chain = utils.create_llm_chain()
+    st.session_state.llm_chain = summary_agent()
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -27,9 +27,7 @@ with tab1:
     st.header("OpenAI  Chatapp")
     if user_message:
         restore_history_messages()
-        with get_openai_callback() as cb:
-            output = st.session_state.llm_chain.predict(human_input=user_message)
-            utils.log_openai_usage(cb.total_tokens, cb.prompt_tokens, cb.completion_tokens, cb.total_cost)
+        output = st.session_state.llm_chain.summarize(query=user_message)
         message(user_message, is_user=True, key="user_message")
         message(output, is_user=False, key="bot_message")
         append_state_messages(user_message, output)
