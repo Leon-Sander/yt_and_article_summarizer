@@ -1,3 +1,4 @@
-### Langchain Chat App with Streamlit 
+### Youtube and Online Article Summarizer
 
-This is the code to my streamlit exploration video: https://youtu.be/8p01ZYQlGp4
+You can just run summarizer_agent to interact with the summarizer agent through the command line, or 
+run the streamlit_app to have a chat web interace.
