@@ -6,3 +6,4 @@ st-chat-message
 pandas
 youtube-transcript-api
 beautifulsoup4
+tiktoken
