@@ -1,0 +1,13 @@
+version: 1.0
+runtime: python3.10.12
+build:
+  commands:
+    pre-build:
+      - pip install -r requirements.txt
+    build:
+      - echo "Build completed"
+run: 
+  command: streamlit run streamlit_app.py
+  network:
+    port: 8501
+    env: APP_PORT

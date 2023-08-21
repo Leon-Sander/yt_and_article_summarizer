@@ -11,14 +11,12 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage
 from langchain import PromptTemplate
 from langchain.tools import tool
-from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 import requests
 import utils
 import json
 import os
 
-load_dotenv()
 
 text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n", "\n", " "], chunk_size=3950, chunk_overlap=100)
 
